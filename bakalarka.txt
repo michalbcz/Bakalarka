@@ -1,32 +1,61 @@
 Reengineering procesù
 
-Sbìr požadavkù zo toho vyextrahuju analýzu, popis stávající situace
 
-1, Popis stávající situace
 
-			Z dùvodù nedostatku znalostí bylo pùvodní øešení založeno na zapisován záznamù do MS Excel
 
-			Problémy stávajícího øešení
 
-			Výhody: Všichni to znaj
-				Velmi jednoduchá manipaluce (zadávání)
-			Staèí pouze jeden SW
-			Stejný interface
 
-			Nevýhody: 	Není validace dat (možnost pøeklepu)
-		          		Auditing (Kdo co kdy zmìnil)
-			    
-		          		Nulové zabezpeèení - Chybí Auditing (Kdo co kdy zmìnil)
-				               Historizace (Zmìna dat v èase)
-					       Kdokoliv kdo má pøístup na pc mùže smazat celý soubor (Z dùvodù že není soubor umístìn na sdíleném disku)
-			  
-			  Neexistence zálohování
+Pripadova studie
 
-			  Sdílení - Na dokumentu nemùže pracovat více lidí souèasnì
-			            V pøípadì pøenesení souboru jinam není zaruèena jejich aktuálnost
+	Problem
 
-2, Návrh øešení Po zhodnocení následující analýzy kdy nìkteré z tìchto problém se dají øešit pomocí rùzných zpùsobù které se liší dle složitosti realizace
-			A, Zachování stvájícího SW a zmìna zpùsobu použití 
+		clovek kterej rentgen potrebuje schvaleni -> zvazni zda je rentge v poradku -> schvaleni ci odmitnuti [my neresime, to je jak to funguje]\
+
+	    Use case diagram
+
+
+
+
+	    	zadavatel [actor] -> zaznamenani zmerenych hodnot 
+
+	        vedouci [actor] -> jednou za mesic vygeneruje report pdf
+
+	        vedecoui [actor] -> vyhedavani v datech 
+
+	        
+
+
+
+	Sbìr požadavkù zo toho vyextrahuju analýzu, popis stávající situace
+
+	1, Popis stávající situace
+
+				Z dùvodù nedostatku znalostí bylo pùvodní øešení založeno na zapisován záznamù do MS Excel
+
+				Problémy stávajícího øešení
+
+				Výhody: Všichni to znaj
+					Velmi jednoduchá manipaluce (zadávání)
+				Staèí pouze jeden SW
+				Stejný interface
+
+				Nevýhody: 	Není validace dat (možnost pøeklepu)
+			          		Auditing (Kdo co kdy zmìnil)
+				    
+			          		Nulové zabezpeèení - Chybí Auditing (Kdo co kdy zmìnil)
+					               Historizace (Zmìna dat v èase)
+						       Kdokoliv kdo má pøístup na pc mùže smazat celý soubor (Z dùvodù že není soubor umístìn na sdíleném disku)
+				  
+				  Neexistence zálohování
+
+				  Sdílení - Na dokumentu nemùže pracovat více lidí souèasnì
+				            V pøípadì pøenesení souboru jinam není zaruèena jejich aktuálnost
+
+
+
+
+	2, Návrh øešení Po zhodnocení následující analýzy kdy nìkteré z tìchto problém se dají øešit pomocí rùzných zpùsobù které se liší dle složitosti realizace
+				A, Zachování stvájícího SW a zmìna zpùsobu použití 
 				Pøenesení soboru na sdílený disk
 				Nastavení funkce sdílení (podívat se do officu na funkci sdílení)
 				Nastavení zálohování		
@@ -37,13 +66,82 @@ Sbìr požadavkù zo toho vyextrahuju analýzu, popis stávající situace
 				
 				nevyhoda: casova narocnost
 	
-
-3, výbìr øešení
-Dùvod: Pro úèelý bakalaøské práce jsem se rozhodl vyøešit všechny stávající negativa pro druhou možnost:
-
+	3, výbìr øešení
+	Dùvod: Pro úèely bakalaøské práce jsem se rozhodl vyøešit všechny stávající negativa pro druhou možnost:
 
 
 
+	4, Vývoj
+	 
+	 a, metodika vývoje
+	 	výpis možností metodik -
+	 		agile
+	 		waterfall
+			...
+
+	 	 zvolení agilní a proè
+
+	 b) architektura
+	 		tlustej klient (gui) vs tenkej klient (web)
+
+	 c, vývojové nástroje
+	 	IDE versus notepad vs 	Sublime text
+	 
+	 d, pouzite technoglie
+
+		 Vybral jsem si vytvoøení webového softwaru z dùvodu nenutnosti instalovaní SW na lokálních pc
+		K vytvøení aplikace
+
+		Jako krabicové øešení jsme se rozhodl pro webovou aplikaci (z dùvodù nenutnosti instalace aplikace na lokálních pc) vytvoøenou pomocí programovacích jazykù PHP, Javascriptu (a jeho knihovny jQuery), stylovacího jazyka CSS a SØBD (Systém øízení báze dat) MySQL dále db.
+
+		Dùvody:
+		PHP dobøe dokumentovaný
+			velká rozšíøenost
+			velká komunita
+			snadné nasazení
+
+		Javascript 
+			z dùvodu uživatelské pøívìtivosti UX - user experience (Validace na stranì klienta)
+				jQuery
+				 	nejrošíøenìjsí knihovna (znovupouželný kód) pro Javascript
+		MySQL
+			Dosavadní SØBD
+
+	 
+	 5. implementace
+
+
+
+	 	a) navrh obrazovek (prototyp)
+	 			uzivatelum ukazu obrazavku a oni mi daji zpetnou vazbu, udelam zmeny a znova ukazu
+	 			zvazuju technickou narocnost reseni
+
+	 	b) skutecna implementace
+
+	 			I. graficky navrh 
+
+                II. kod
+
+                	ajax
+                	PDO - pouziva se sql
+
+
+                III. persistentni vrstva [db] 
+
+                	ER model [koncepcni model]
+
+                	fyzicky model	
+
+
+                		
+
+
+
+
+
+	 			X. migrace stavajicich dat 
+	 					a) cisteni
+	 					b) nahrani
 
 
 
@@ -54,13 +152,25 @@ Dùvod: Pro úèelý bakalaøské práce jsem se rozhodl vyøešit všechny stávající nega
 
 
 
-Návrh øešení(client server architektura, serverová èást PHP na Apachi, klientská èást v prohlížeèí js (jquery), komunikace pomocí http) 
-Vývoj (agilní vývoj ComputerPress)(IDE)(Databáze)(git)
 
-Implementace
-Bezpeènost (AUtorizace, Autentizace, PDO, owasp top ten)
-Testování (manuální testování pøípadnì další metody testování)
-	Nasazení
-Dokumentace (uživatelská pøíruèka)
-Auditing (Kdo co kdy 
+
+
+
+
+
+
+
+
+
+
+
+	Návrh øešení(client server architektura, serverová èást PHP na Apachi, klientská èást v prohlížeèí js (jquery), komunikace pomocí http) 
+	Vývoj (agilní vývoj ComputerPress)(IDE)(Databáze)(git)
+
+	Implementace
+	Bezpeènost (AUtorizace, Autentizace, PDO, owasp top ten)
+	Testování (manuální testování pøípadnì další metody testování)
+		Nasazení
+	Dokumentace (uživatelská pøíruèka)
+	Auditing (Kdo co kdy 
 
