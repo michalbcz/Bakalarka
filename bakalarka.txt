@@ -1,0 +1,66 @@
+Reengineering procesù
+
+Sbìr požadavkù zo toho vyextrahuju analýzu, popis stávající situace
+
+1, Popis stávající situace
+
+			Z dùvodù nedostatku znalostí bylo pùvodní øešení založeno na zapisován záznamù do MS Excel
+
+			Problémy stávajícího øešení
+
+			Výhody: Všichni to znaj
+				Velmi jednoduchá manipaluce (zadávání)
+			Staèí pouze jeden SW
+			Stejný interface
+
+			Nevýhody: 	Není validace dat (možnost pøeklepu)
+		          		Auditing (Kdo co kdy zmìnil)
+			    
+		          		Nulové zabezpeèení - Chybí Auditing (Kdo co kdy zmìnil)
+				               Historizace (Zmìna dat v èase)
+					       Kdokoliv kdo má pøístup na pc mùže smazat celý soubor (Z dùvodù že není soubor umístìn na sdíleném disku)
+			  
+			  Neexistence zálohování
+
+			  Sdílení - Na dokumentu nemùže pracovat více lidí souèasnì
+			            V pøípadì pøenesení souboru jinam není zaruèena jejich aktuálnost
+
+2, Návrh øešení Po zhodnocení následující analýzy kdy nìkteré z tìchto problém se dají øešit pomocí rùzných zpùsobù které se liší dle složitosti realizace
+			A, Zachování stvájícího SW a zmìna zpùsobu použití 
+				Pøenesení soboru na sdílený disk
+				Nastavení funkce sdílení (podívat se do officu na funkci sdílení)
+				Nastavení zálohování		
+			
+			B, Krabicové øesení http://knihy.cpress.cz/softwarove-inzenyrstvi.html#
+				vyhoda: øešení všech nevýhod
+				
+				
+				nevyhoda: casova narocnost
+	
+
+3, výbìr øešení
+Dùvod: Pro úèelý bakalaøské práce jsem se rozhodl vyøešit všechny stávající negativa pro druhou možnost:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Návrh øešení(client server architektura, serverová èást PHP na Apachi, klientská èást v prohlížeèí js (jquery), komunikace pomocí http) 
+Vývoj (agilní vývoj ComputerPress)(IDE)(Databáze)(git)
+
+Implementace
+Bezpeènost (AUtorizace, Autentizace, PDO, owasp top ten)
+Testování (manuální testování pøípadnì další metody testování)
+	Nasazení
+Dokumentace (uživatelská pøíruèka)
+Auditing (Kdo co kdy 
+
